@@ -1,0 +1,7 @@
+# 非公開ファイルを誤って公開しないための保険
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+v*_tpl.html
+*_backup*
