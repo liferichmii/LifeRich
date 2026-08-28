@@ -879,7 +879,10 @@ html.anim.go .hero .art{opacity:1;transform:none}
   var W=0,H=0,DPR=1;
   function resize(){DPR=Math.min(devicePixelRatio||1,isTouch?1.5:2);W=innerWidth;H=innerHeight;
     cv.width=Math.floor(W*DPR);cv.height=Math.floor(H*DPR);gl.viewport(0,0,cv.width,cv.height);}
-  addEventListener('resize',resize);resize();
+  addEventListener('resize',resize);
+  addEventListener('pageshow',resize);
+  addEventListener('load',resize);
+  resize();
   var px=0,py=0,tx=0,ty=0;
   if(!isTouch){addEventListener('pointermove',function(e){tx=e.clientX/innerWidth-0.5;ty=e.clientY/innerHeight-0.5;},{passive:true});}
   var scr=0,tscr=0,fade=1;
@@ -894,10 +897,13 @@ html.anim.go .hero .art{opacity:1;transform:none}
     cv.style.opacity = fade.toFixed(3);
   }
   addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var t0=performance.now(),visible=true,tPrev=0;
-  document.addEventListener('visibilitychange',function(){visible=!document.hidden;
-    if(visible&&!reduce){t0=performance.now()-tPrev*1000;loop();}});
+  var t0=performance.now(),visible=!document.hidden,tPrev=0;
+  document.addEventListener('visibilitychange',function(){
+    visible=!document.hidden;
+    if(visible){ resize(); if(!reduce){t0=performance.now()-tPrev*1000;loop();} else { draw(0); } }
+  });
   function draw(t){
+    if(!W||!H)return;
     px+=(tx-px)*0.06;py+=(ty-py)*0.06;scr+=(tscr-scr)*0.07;
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform1f(U.uT,t);
@@ -909,8 +915,13 @@ html.anim.go .hero .art{opacity:1;transform:none}
     gl.uniform1f(U.uDist,7.4+scr*2.2);gl.uniform1f(U.uScale,(H/900)*DPR*44);gl.uniform1f(U.uAspect,W/H);
     gl.drawArrays(gl.POINTS,0,N);
   }
-  function loop(){ if(!visible)return; tPrev=(performance.now()-t0)/1000;
-    draw(tPrev); requestAnimationFrame(loop); }
+  function loop(){
+    if(!visible)return;
+    if(innerWidth>0 && (W!==innerWidth || H!==innerHeight)) resize();
+    tPrev=(performance.now()-t0)/1000;
+    draw(tPrev);
+    requestAnimationFrame(loop);
+  }
   try{ if(reduce){draw(0);}else{loop();} }catch(e){ cv.style.display='none'; }
 })();
 
