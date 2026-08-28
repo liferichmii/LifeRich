@@ -852,7 +852,7 @@ html.anim.go .hero .art{opacity:1;transform:none}
     aFar[i*3]=(Math.random()*2-1)*7; aFar[i*3+1]=(Math.random()*2-1)*4.6; aFar[i*3+2]=(Math.random()*2-1)*5;
     var c=PAL[(Math.random()*PAL.length)|0];
     aCol[i*3]=c[0]; aCol[i*3+1]=c[1]; aCol[i*3+2]=c[2];
-    aSiz[i]=4+Math.random()*12; aPh[i]=Math.random()*Math.PI*2;
+    aSiz[i]=5+Math.random()*14; aPh[i]=Math.random()*Math.PI*2;
   }
   var VS=['attribute vec3 aOrb;attribute vec3 aFar;attribute vec3 aCol;attribute float aSiz;attribute float aPh;',
   'uniform float uT,uSpread,uRotY,uRotX,uDist,uScale,uAspect;varying vec3 vCol;varying float vA;',
@@ -861,10 +861,10 @@ html.anim.go .hero .art{opacity:1;transform:none}
   'float b=uRotX,cb=cos(b),sb=sin(b);p=vec3(p.x,p.y*cb-p.z*sb,p.y*sb+p.z*cb);',
   'float vz=p.z-uDist;float f=2.2;gl_Position=vec4(p.x*f/uAspect,p.y*f,-vz*0.02,-vz);',
   'gl_PointSize=aSiz*uScale/max(0.35,-vz);vCol=aCol;',
-  'vA=clamp(1.0-(-vz-4.0)/12.0,0.12,1.0)*(0.5+0.5*sin(uT*0.8+aPh));}'].join('\n');
+  'vA=clamp(1.0-(-vz-4.0)/12.0,0.35,1.0)*(0.78+0.22*sin(uT*0.8+aPh));}'].join('\n');
   var FS=['precision mediump float;varying vec3 vCol;varying float vA;void main(){',
   'vec2 d=gl_PointCoord-vec2(0.5);float r=length(d)*2.0;float al=smoothstep(1.0,0.15,r);',
-  'if(al<0.01)discard;gl_FragColor=vec4(vCol,al*vA*0.42);}'].join('\n');
+  'if(al<0.01)discard;gl_FragColor=vec4(vCol,al*vA*0.9);}'].join('\n');
   function sh(t,s){var x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);
     return gl.getShaderParameter(x,gl.COMPILE_STATUS)?x:null;}
   var pr=gl.createProgram(), vs=sh(gl.VERTEX_SHADER,VS), fs=sh(gl.FRAGMENT_SHADER,FS);
