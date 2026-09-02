@@ -1,7 +1,30 @@
-# 非公開ファイルを誤って公開しないための保険
+# ── 機密情報（絶対に公開しない）────────────────────
+.env
+.env.*
+*.key
+*.pem
+*.p12
+secrets.*
+credentials*.json
+service-account*.json
+token*.json
+*_secret*
+*apikey*
+*api_key*
+
+# ── 非公開の業務ファイルを誤って公開しないための保険 ──
 *.pdf
 *.docx
 *.pptx
 *.xlsx
+*.csv
 v*_tpl.html
 *_backup*
+
+# ── 作業用の一時ファイル ──────────────────────────
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+.gitignore.bak
