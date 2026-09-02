@@ -138,7 +138,7 @@ git push origin main
 | リポジトリ | https://github.com/liferichmii/LifeRich |
 | 公開設定 | **Public（公開）** |
 | ブランチ | `main` のみ |
-| コミット者 | LifeRich \<lucky8mizuki@gmail.com\> |
+| コミット者 | LifeRich（gitのuser.nameに設定済み） |
 | 認証 | Git Credential Manager（初回のみブラウザでログイン） |
 | ローカルの場所 | `C:\Users\mi723\Desktop\LifeRich\github用` |
 
