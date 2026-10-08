@@ -666,6 +666,14 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
   .why p,.contact p.lead2{text-wrap:pretty;word-break:normal;line-break:strict}
 }
 .contact p.lead2{max-width:95%;margin-inline:auto}
+
+/* ===== 修正 10/9: 実例の見出し1行・選ばれる理由の説明文幅 ===== */
+.rcard h3{white-space:nowrap;font-size:clamp(19px,2.2vw,25px)}
+@media (min-width:860px){
+  .why{grid-template-columns:90px 1fr;gap:18px 40px}
+  .why p{grid-column:1 / -1;max-width:95%;margin-inline:auto;text-align:left}
+}
+.why p{width:95%}
 </style>
 </head>
 <body>
@@ -833,10 +841,10 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
     </div>
   </div>
   <div class="rail" id="rail" tabindex="0" aria-label="活用例（横にスクロールできます）">
-    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg><span class="k">01 / 顧客対応</span><h3>公式LINEの一次対応を、24時間。</h3><p>友だち追加のあいさつも、よくある質問への返信も、相談内容の聞き取りも。お客様をお待たせしません。</p></article>
-    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="16" y="6" width="32" height="52" rx="6"/><path d="M28 50h8M22 18h20M22 26h14"/></svg><span class="k">02 / SNS発信</span><h3><span class="nb">広報の仕事を、</span><span class="nb">AIの仕組みで</span><span class="nb">回している</span></h3><p>毎朝6時にInstagramの数字が自動で集まり、AIがそれを読んで、今週の撮影リストをメールで送ってくる。</p></article>
-    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 8h28l10 10v38H14z"/><path d="M42 8v10h10M22 30h22M22 38h22M22 46h14"/></svg><span class="k">03 / 事務作業</span><h3><span class="nb">レッスン後の事務を、</span><span class="nb">まるごと</span></h3><p>録音の文字起こし → レポート化 → 保存 → カルテ更新 → メール下書きまで。わたしは読んで送信を押すだけ。</p></article>
-    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 50l8-2 30-30-6-6-30 30z"/><path d="M38 14l6 6M10 56h44"/></svg><span class="k">04 / 文章</span><h3><span class="nb">自分の言葉づかいを、</span><span class="nb">AIが覚えている</span></h3><p>語尾も口グセも登録ずみ。投稿もメルマガもそこから書き出すので「自分っぽさ」がぶれません。</p></article>
+    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M32 18v14l9 6"/></svg><span class="k">01 / 顧客対応</span><h3>公式LINEにAIボット</h3><p>友だち追加のあいさつも、よくある質問への返信も、相談内容の聞き取りも。お客様をお待たせしません。</p></article>
+    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="16" y="6" width="32" height="52" rx="6"/><path d="M28 50h8M22 18h20M22 26h14"/></svg><span class="k">02 / SNS発信</span><h3>SNS分析を自動で</h3><p>毎朝6時にInstagramの数字が自動で集まり、AIがそれを読んで、今週の撮影リストをメールで送ってくる。</p></article>
+    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 8h28l10 10v38H14z"/><path d="M42 8v10h10M22 30h22M22 38h22M22 46h14"/></svg><span class="k">03 / 事務作業</span><h3>レポート作成も自動</h3><p>録音の文字起こし → レポート化 → 保存 → カルテ更新 → メール下書きまで。わたしは読んで送信を押すだけ。</p></article>
+    <article class="rcard"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 50l8-2 30-30-6-6-30 30z"/><path d="M38 14l6 6M10 56h44"/></svg><span class="k">04 / 文章</span><h3>口グセも登録ずみ</h3><p>語尾も口グセも登録ずみ。投稿もメルマガもそこから書き出すので「自分っぽさ」がぶれません。</p></article>
   </div>
 </section>
 
@@ -1033,7 +1041,7 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
     <p class="eyebrow rv"><span class="n">10</span><span class="t">はじめ方</span></p>
     <div class="ct-top">
       <div class="ct-copy">
-        <p class="ct-vision rv"><span class="nb">人生は一度きり。</span><span class="nb">時間の使い方は、</span><span class="nb">自分で決められる。</span><br><span class="nb">その最初の一歩は、</span><span class="nb">質問ひとつから。</span></p>
+        <p class="ct-vision rv"><span class="nb">人生は一度きり。</span><br><span class="nb">時間の使い方は、</span><span class="nb">自分で決められる。</span><br><span class="nb">その最初の一歩は、</span><span class="nb">質問ひとつから。</span></p>
         <h2 class="rv ct-h"><span class="nb">わからないことを、</span><br><span class="nb">そのまま送ってください。</span></h2>
         <p class="lead2 rv">「何から始めればいいかわからない」段階でも大丈夫です。公式LINEで質問を送ると、AIが状況を聞き取ったあと、美月に引き継ぎます。無理な勧誘はしません。</p>
       </div>
