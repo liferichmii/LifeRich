@@ -674,6 +674,11 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
   .why p{grid-column:1 / -1;max-width:95%;margin-inline:auto;text-align:left}
 }
 .why p{width:95%}
+
+/* ===== 修正 10/9b: スマホは画面幅の95%・中央配置・左揃え ===== */
+@media (max-width:640px){
+  .why p{width:95vw;max-width:95vw;margin-inline:calc(50% - 47.5vw);text-align:left}
+}
 </style>
 </head>
 <body>
