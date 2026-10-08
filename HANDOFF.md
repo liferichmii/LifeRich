@@ -1,4 +1,4 @@
-# 引き継ぎ ─ LifeRich 公式サイト
+﻿# 引き継ぎ ─ LifeRich 公式サイト
 
 最終更新: 2026-09-02 ／ 記入者: Claude Code（Codexへの引き継ぎのため）
 
@@ -63,7 +63,7 @@ Codexがこのプロジェクトを引き継いだら、この順で進めてく
 
 1. **まず現状を壊さないことの確認**
    ```bash
-   cd "C:\Users\mi723\Desktop\LifeRich\github用"
+   cd "C:\Users\mi723\Desktop\作業中のプロジェクト\LifeRich\github用"
    git status
    git log --oneline -5
    ```
@@ -140,7 +140,7 @@ git push origin main
 | ブランチ | `main` のみ |
 | コミット者 | LifeRich（gitのuser.nameに設定済み） |
 | 認証 | Git Credential Manager（初回のみブラウザでログイン） |
-| ローカルの場所 | `C:\Users\mi723\Desktop\LifeRich\github用` |
+| ローカルの場所 | `C:\Users\mi723\Desktop\作業中のプロジェクト\LifeRich\github用` |
 
 ---
 
@@ -148,7 +148,7 @@ git push origin main
 
 1. **このリポジトリは全世界に公開されています。** APIキー・パスワード・生徒さまの個人情報・
    売上の実数を絶対に置かない。`.gitignore` で保険をかけてありますが、最後は目で確認する
-2. **親フォルダ `Desktop\LifeRich` には非公開ファイルが入っています。**
+2. **親フォルダ `Desktop\作業中のプロジェクト\LifeRich` には非公開ファイルが入っています。**
    そこからこのフォルダへファイルをコピーしない
 3. 価格・特商法・外部リンクを変えるときは、**必ず本人に確認してから**
 4. 独自ドメインの設定、GitHub Pagesの設定変更、リポジトリの公開／非公開切り替えは、
