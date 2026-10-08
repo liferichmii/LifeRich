@@ -642,6 +642,15 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
   .more .qa dt,.more .qa dd{max-width:100%;text-wrap:wrap;word-break:normal;line-break:strict}
 }
 .hero h1 .ln:first-child{margin-right:-.3em}
+
+/* ===== 修正 10/8b: 説明文は幅95%・ブロック中央・文字は左揃え ===== */
+.sp{display:none}
+@media (max-width:640px){.sp{display:inline}}
+.lead,.lead2,.contact p.lead2,.pin .head .lead,#why .lead,.voice-head .lead,.tr-head .lead,.real .rail-head .lead,.pf-body{max-width:95%;margin-inline:auto;text-align:left}
+.pf-body p{max-width:none}
+
+/* ===== 08: 向いている方のみ ===== */
+@media (min-width:860px){.fit .wrap{grid-template-columns:1fr}.fbox.yes ul{grid-template-columns:1fr 1fr;gap:14px 36px}}
 </style>
 </head>
 <body>
@@ -718,7 +727,7 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
     <div class="tr-head">
       <p class="eyebrow rv"><span class="n">01</span><span class="t">お悩み</span></p>
       <h2 class="h2 rv"><span class="nb">こんなことで、</span><br><span class="nb">困っていませんか。</span></h2>
-      <p class="lead rv"><span class="nb">フリーランスの方から、</span><span class="nb">こんなご質問を</span><span class="nb">よくいただきます。</span></p>
+      <p class="lead rv"><span class="nb">フリーランスの方から、</span><br class="sp"><span class="nb">こんなご質問を</span><span class="nb">よくいただきます。</span></p>
     </div>
     <div class="stack">
       <article class="post" style="--i:0">
@@ -941,7 +950,7 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
         <li>セミナーのキャンセルは、開始10分前までに公式LINEでご連絡ください。返金は、振込手数料を差し引いた金額になります。それ以降のキャンセル、欠席、途中退出は返金できません</li>
         <li>主催者の都合でセミナーを中止する場合は、参加費を全額（振込手数料は当方負担）返金します。返金は、キャンセルまたは中止のご連絡から7日以内に行います</li>
         <li>マンツーマンは、開始2時間前までに公式LINEでご連絡いただければ、日程の振替または返金（振込手数料を差し引きます）をお選びいただけます。過ぎた場合は1回分の消化となります</li>
-        <li>2026年12月31日まで、セミナーにお友達1名を無料でご同伴いただけます</li>
+        <li>価格交渉から会話が始まる場合や、ご連絡が取れない場合は、お受けできないことがあります</li>
       </ul>
     </details>
   </div>
@@ -961,7 +970,6 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
         <p>わたしにとってAIは、流行のスキルではありませんでした。21歳で母になって、そのあと子どもを守るために家を出ました。娘たちと、もう一度ちゃんと生きるための道具でした。</p>
       </div>
       <p class="pf-big rv"><span class="nb">どん底は、</span><span class="nb">最強のスタート地点。</span></p>
-      <p class="pf-creed rv">女性支援ではなく、女性の活躍を推す。<br>それが私の信条です。</p>
       <details class="career rv">
         <summary><span>学生時代から現在までの歩みを見る</span><span class="pm" aria-hidden="true"></span></summary>
         <ol class="tl" id="tl"><li style="--k:0"><span class="age">学生時代</span><p>ホームページ作成が得意。商業高校でPCスキルを身につける</p></li><li style="--k:1"><span class="age">25歳</span><p>起業し、自分でホームページを制作・開設</p></li><li style="--k:2"><span class="age">27歳</span><p>商工会議所のPC教室で非常勤講師。同時期に、物流系スタートアップの女性社長のオンライン秘書を担当</p></li><li style="--k:3"><span class="age">28歳</span><p>その社長のDELL女性起業家コンテスト応募用紙をChatGPTと共に作成し、一次審査通過（のちに優勝）</p></li><li style="--k:4"><span class="age">29歳</span><p>AIの可能性を強く感じ、AIスクールへ入会。生成AIパスポートを取得</p></li><li style="--k:5"><span class="age">30歳</span><p>AIを道具として捉え、プログラミングを学ぶWebアプリ科へ</p></li><li style="--k:6"><span class="age">31歳</span><p>AIベンチャー企業へ入社し、子ども向けAIスクールの統括を担当</p></li><li style="--k:7"><span class="age">現在</span><p>LifeRichとして、AI活用を伝えている</p></li></ol>
@@ -974,7 +982,7 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
 <section class="sec fit" id="fit">
   <div class="wrap" style="display:block">
     <p class="eyebrow rv"><span class="n">08</span><span class="t">こんな方へ</span></p>
-    <h2 class="h2 rv" style="margin-bottom:clamp(28px,4vw,48px)">ご一緒したい方、<br>お受けしていない方。</h2>
+    <h2 class="h2 rv" style="margin-bottom:clamp(28px,4vw,48px)">こんな方に、<br>向いています。</h2>
   </div>
   <div class="wrap">
     <div class="fbox yes rv">
@@ -984,15 +992,6 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
         <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>ITは苦手だけど、会話ならできる方</li>
         <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>子どもとの時間を、ちゃんと確保したい方</li>
         <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>完璧じゃなくていいから、まず動いてみたい方</li>
-      </ul>
-    </div>
-    <div class="fbox no rv" style="--d:.1s">
-      <h3>お受けしていない方</h3>
-      <ul>
-        <li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>楽して稼ぎたい方</li>
-        <li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>AIに答えを出してもらいたい方（決めるのはご自身です）</li>
-        <li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>課題に手をつけない・ご連絡が返ってこない方</li>
-        <li><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>価格交渉から会話が始まる方</li>
       </ul>
     </div>
   </div>
