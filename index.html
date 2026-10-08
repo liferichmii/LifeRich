@@ -620,6 +620,10 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
 .ct-chat .msg.in{justify-self:start;background:#fff;border:1px solid var(--line);border-top-left-radius:6px}
 .ct-chat .msg.out{justify-self:end;background:var(--sun);color:var(--ink-deep);border-top-right-radius:6px}
 .ct-note{padding:10px 18px 14px;font-size:12px;color:var(--muted);text-align:center}
+
+/* ===== 修正: 選ばれる理由の紹介動画 ===== */
+.why-video{margin:30px auto 40px;max-width:880px;width:100%}
+.why-video video{display:block;width:100%;aspect-ratio:16/9;background:var(--pink-mist);border-radius:22px;border:1.5px solid var(--ink);box-shadow:0 18px 40px rgba(18,29,68,.14)}
 </style>
 </head>
 <body>
@@ -783,6 +787,11 @@ p,li,dd,dt,blockquote,figcaption,.lead,.sub{text-wrap:pretty}
     <p class="eyebrow rv"><span class="n">03</span><span class="t">選ばれる理由</span></p>
     <h2 class="h2 bub rv"><span>わからない人がわかるようになる。</span></h2>
     <p class="lead rv">選ばれる理由は、この3つ。わたし自身がゼロからAIを学んだ1人だから、どこでつまずくかがわかります。</p>
+    <figure class="why-video rv">
+      <video controls playsinline preload="none" poster="liferich-intro.jpg" aria-label="LifeRichの紹介動画（約28秒）">
+        <source src="liferich-intro.mp4" type="video/mp4">
+      </video>
+    </figure>
     <div class="why-list">
       <div class="why rv">
         <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M22 32h20M32 22v20" transform="rotate(45 32 32)"/></svg>
